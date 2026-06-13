@@ -8,36 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0b1e3a;
-      --navy2: #163460;
-      --gold: #c07a10;
-      --gold2: #e59b1a;
-      --bg: #f0f2f6;
-      --white: #fff;
-      --ink: #0e1622;
-      --slate: #6b7a90;
-      --border: #dde3ed;
-      --blue-pale: #eef3ff;
-      --blue: #1242a8;
-      --green: #218838;
-      --r-lg: 14px;
-      --r: 8px;
-      --ff-head: 'Syne', sans-serif;
-      --ff-body: 'DM Sans', sans-serif;
+      --navy: #0b1e3a; --navy2: #163460; --gold: #c07a10; --gold2: #e59b1a;
+      --bg: #f0f2f6; --white: #fff; --ink: #0e1622; --slate: #6b7a90;
+      --border: #dde3ed; --blue-pale: #eef3ff; --blue: #1242a8; --green: #218838;
+      --r-lg: 14px; --r: 8px; --ff-head: 'Syne', sans-serif; --ff-body: 'DM Sans', sans-serif;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--ff-body); background: var(--bg); color: var(--ink); min-height: 100vh; }
 
     /* TELA DE CADASTRO / ACESSO */
-    #login-screen {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: var(--navy); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px;
-    }
-    .login-box {
-      background: var(--white); padding: 40px; border-radius: var(--r-lg); width: 100%; max-width: 450px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--gold);
-    }
+    #login-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--navy); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+    .login-box { background: var(--white); padding: 40px; border-radius: var(--r-lg); width: 100%; max-width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--gold); }
     .login-box h2 { font-family: var(--ff-head); color: var(--navy); margin-bottom: 5px; text-align: center; }
     .login-box p { color: var(--slate); font-size: 14px; text-align: center; margin-bottom: 25px; }
     .form-group { margin-bottom: 15px; display: flex; flex-direction: column; gap: 5px; }
@@ -48,7 +29,6 @@
 
     /* ESTRUTURA DO PORTAL */
     #portal-screen { display: none; flex-direction: column; height: 100vh; }
-    
     #topbar { background: var(--navy); border-bottom: 2px solid var(--gold); height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
     .tb-brand { font-family: var(--ff-head); font-size: 18px; font-weight: 700; color: #fff; }
     .tb-brand span { color: var(--gold2); }
@@ -57,7 +37,6 @@
     #app-container { display: flex; flex: 1; height: calc(100vh - 60px); overflow: hidden; }
     #sidebar { width: 280px; background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
     .nav-section { font-family: var(--ff-head); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--slate); padding: 20px 16px 8px; font-weight: 700; }
-    
     .nav-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: var(--ink); font-size: 14px; font-weight: 500; border-left: 3px solid transparent; background: none; border: none; width: 100%; text-align: left; cursor: pointer; transition: background 0.15s; }
     .nav-item:hover { background: var(--bg); }
     .nav-item.active { background: var(--blue-pale); color: var(--blue); border-left-color: var(--blue); font-weight: 600; }
@@ -68,58 +47,35 @@
 
     .page-title { font-family: var(--ff-head); font-size: 22px; font-weight: 700; color: var(--navy); }
     .page-sub { color: var(--slate); font-size: 14px; margin-top: -15px; }
-    
     .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* CARDS DE EXERCÍCIOS */
     .card-exercise { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 15px; }
     .btn-form { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, var(--gold), #e8a020); color: var(--navy); padding: 14px 24px; border-radius: var(--r); text-decoration: none; font-family: var(--ff-head); font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; box-shadow: 0 4px 14px rgba(192, 122, 16, 0.2); max-width: 320px; }
     .btn-form:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192, 122, 16, 0.35); }
 
-    /* BOTÃO DO CERTIFICADO FIXO NO MENU */
     .btn-side-certificado { background: var(--green) !important; color: white !important; font-weight: bold !important; font-family: var(--ff-head); margin-top: auto; border-top: 1px solid var(--border); text-align: center; justify-content: center; padding: 16px !important; }
-    .btn-side-certificado:hover { background: #1e7e34 !important; }
-
     .simulator-frame { width: 100%; height: calc(100vh - 160px); border: 1px solid var(--border); border-radius: var(--r-lg); background: #fff; }
   </style>
 </head>
 <body>
 
-  <!-- 1. TELA DE LOGIN E CADASTRO -->
   <div id="login-screen">
     <div class="login-box">
       <h2>C.E.C.P. Cursos</h2>
       <p>Preencha os dados abaixo para acessar seu treinamento</p>
       
-      <!-- IMPORTANTE: Substitua o ID final pelo seu ID real do Formspree quando criar a conta -->
-      <form id="cadastroForm" action="https://formspree.io/f/seu_id_do_formspree" method="POST" onsubmit="realizarCadastro(event)">
-        <div class="form-group">
-          <label>Nome Completo (Para o Certificado)</label>
-          <input type="text" name="nome" id="regNome" required placeholder="Ex: Adonay Gois">
-        </div>
-        <div class="form-group">
-          <label>CPF</label>
-          <input type="text" name="cpf" id="regCPF" required placeholder="000.000.000-00">
-        </div>
-        <div class="form-group">
-          <label>Cidade / Estado</label>
-          <input type="text" name="cidade" id="regCidade" required placeholder="Ex: Mossoró - RN">
-        </div>
-        <div class="form-group">
-          <label>WhatsApp</label>
-          <input type="tel" name="whatsapp" id="regWhats" required placeholder="(84) 99999-9999">
-        </div>
-        <div class="form-group">
-          <label>Chave de Pré-Matrícula</label>
-          <input type="text" name="chave" id="regChave" required placeholder="Ex: CECPALM001" style="text-transform: uppercase;">
-        </div>
+      <form id="cadastroForm">
+        <div class="form-group"><label>Nome Completo (Para o Certificado)</label><input type="text" name="nome" id="regNome" required placeholder="Ex: Adonay Gois"></div>
+        <div class="form-group"><label>CPF</label><input type="text" name="cpf" id="regCPF" required placeholder="000.000.000-00"></div>
+        <div class="form-group"><label>Cidade / Estado</label><input type="text" name="cidade" id="regCidade" required placeholder="Ex: Mossoró - RN"></div>
+        <div class="form-group"><label>WhatsApp</label><input type="tel" name="whatsapp" id="regWhats" required placeholder="(84) 99999-9999"></div>
+        <div class="form-group"><label>Chave de Pré-Matrícula</label><input type="text" name="chave" id="regChave" required placeholder="Ex: CECPALM001" style="text-transform: uppercase;"></div>
         <button type="submit" class="btn-login">Validar Matrícula e Entrar</button>
       </form>
     </div>
   </div>
 
-  <!-- 2. TELA PRINCIPAL DO PORTAL (NAVEGAÇÃO LIVRE) -->
   <div id="portal-screen">
     <header id="topbar">
       <div class="tb-brand">C.E.C.P. <span>Cursos</span></div>
@@ -140,146 +96,10 @@
         <button class="nav-item" onclick="switchTab('simulador', this)">💻 ERP Almoxarifado</button>
         <button class="nav-item" onclick="switchTab('exercicios', this)">📝 Exercícios de Fixação</button>
 
-        <!-- BOTÃO DE FINALIZAÇÃO -->
         <button class="nav-item btn-side-certificado" onclick="solicitarCertificado()">🥇 SOLICITAR CERTIFICADO</button>
       </nav>
 
       <main id="main-content">
-        <!-- AULA 01 -->
-        <div id="aula1" class="content-pane active">
-          <h2 class="page-title">Aula 01 - Introdução ao Almoxarifado</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/Mu-3vb_mYvE" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- AULA 02 -->
-        <div id="aula2" class="content-pane">
-          <h2 class="page-title">Aula 02 - Conceitos e Organização Espacial</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/5s_E2hrcarA" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- AULA 03 -->
-        <div id="aula3" class="content-pane">
-          <h2 class="page-title">Aula 03 - Controle e Inventário de Materiais</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/IklHskcLMO8" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- AULA 04 -->
-        <div id="aula4" class="content-pane">
-          <h2 class="page-title">Aula 04 - Classificação e Curva ABC</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/aavdhTvI03Q" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- AULA 05 -->
-        <div id="aula5" class="content-pane">
-          <h2 class="page-title">Aula 05 - Práticas de Recebimento e Expedição</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/aavdhTvI03Q" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- AULA 06 -->
-        <div id="aula6" class="content-pane">
-          <h2 class="page-title">Aula 06 - Indicadores e Fechamento de Relatórios</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/2tNWrzyLvzY" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- SIMULADOR ERP INTEGRADO -->
-        <div id="simulador" class="content-pane">
-          <h2 class="page-title">Simulador Prático - ERP Almoxarifado</h2>
-          <p class="page-sub">Utilize o sistema laboratorial abaixo para praticar lançamentos de movimentação de estoque.</p>
-          <iframe src="Simulador -ERP Almoxarifado.html" class="simulator-frame"></iframe>
-        </div>
-
-        <!-- EXERCÍCIOS (GOOGLE FORMS) -->
-        <div id="exercicios" class="content-pane">
-          <h2 class="page-title">Exercícios de Fixação de Conteúdo</h2>
-          <p class="page-sub">Responda aos blocos de questionários oficiais abaixo para registrar seu aprendizado técnico.</p>
-          
-          <div class="card-exercise">
-            <h3>📋 Exercício de Fixação - Bloco 01 (Aulas 1 a 3)</h3>
-            <p>Avaliação sobre conceitos iniciais, estrutura física e controle e auditoria interna.</p>
-            <a href="https://forms.gle/oE6yWAHavtzKmhyi8" target="_blank" class="btn-form">Abrir Bloco de Exercícios 01 ↗</a>
-          </div>
-
-          <div class="card-exercise">
-            <h3>📋 Exercício de Fixação - Bloco 02 (Aulas 4 a 6)</h3>
-            <p>Avaliação cobrindo classificação de materiais, curva ABC, expedição e indicadores de desempenho.</p>
-            <a href="https://forms.gle/EmomQkWRdinUs7Rd7" target="_blank" class="btn-form">Abrir Bloco de Exercícios 02 ↗</a>
-          </div>
-        </div>
-      </main>
-    </div>
-  </div>
-
-  <script>
-    // 1. CHAVES SEQUENCIAIS DE TESTE PARA O CURSO DE ALMOXARIFADO (CECPALM001 até CECPALM100)
-    const chavesValidas = [];
-    for(let i=1; i<=100; i++){
-      let seq = String(i).padStart(3, '0');
-      chavesValidas.push(`CECPALM${seq}`);
-    }
-
-    // 2. CONTROLE DE CADASTRO
-    function realizarCadastro(event) {
-      const chaveDigitada = document.getElementById('regChave').value.trim().toUpperCase();
-      
-      if (!chavesValidas.includes(chaveDigitada)) {
-        event.preventDefault(); 
-        alert("Chave de Pré-Matrícula inválida para este curso! Verifique seu código.");
-        return;
-      }
-
-      // Salva na memória local do navegador para evitar recadastro na mesma máquina
-      localStorage.setItem('alunoNome_Almox', document.getElementById('regNome').value);
-      localStorage.setItem('alunoCidade_Almox', document.getElementById('regCidade').value);
-      localStorage.setItem('acessoLiberado_Almox', 'sim');
-      
-      // Delay pequeno para o envio do Formspree acontecer em segundo plano
-      setTimeout(() => {
-        abrirPortal();
-      }, 1000);
-    }
-
-    function abrirPortal() {
-      document.getElementById('login-screen').style.display = 'none';
-      document.getElementById('portal-screen').style.display = 'flex';
-      document.getElementById('user-display').innerText = `Aluno(a): ${localStorage.getItem('alunoNome_Almox')}`;
-    }
-
-    // 3. ALTERNÂNCIA DE TELAS
-    function switchTab(tabId, element) {
-      document.querySelectorAll('.content-pane').forEach(pane => pane.classList.remove('active'));
-      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-
-      document.getElementById(tabId).classList.add('active');
-      if(element) element.classList.add('active');
-    }
-
-    // 4. SOLICITAÇÃO DE CERTIFICADO COM SEUS DADOS INTEGRADOR
-    function solicitarCertificado() {
-      const nome = localStorage.getItem('alunoNome_Almox') || 'Não Informado';
-      const cidade = localStorage.getItem('alunoCidade_Almox') || 'Não Informada';
-      
-      const texto = encodeURIComponent(`Olá, coordenação da C.E.C.P. Cursos! Finalizei todas as aulas e os blocos de exercícios no portal de Almoxarifado. Gostaria de solicitar a emissão do meu certificado técnico.\n\n*Dados de Registro:*\n• Nome: ${nome}\n• Cidade: ${cidade}\n• Curso: Almoxarifado e Logística Integrada`);
-      
-      // IMPORTANTE: Insira o número do seu WhatsApp comercial abaixo
-      window.open(`https://wa.me/5584999999999?text=${texto}`, '_blank');
-    }
-
-    // Auto-login se o aluno já se cadastrou nesse dispositivo antes
-    if(localStorage.getItem('acessoLiberado_Almox') === 'sim') {
-      abrirPortal();
-    }
-  </script>
-</body>
-</html>
+        <div id="aula1" class="content-pane active"><h2 class="page-title">Aula 01 - Introdução ao Almoxarifado</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/Mu-3vb_mYvE" allowfullscreen></iframe></div></div>
+        <div id="aula2" class="content-pane"><h2 class="page-title">Aula 02 - Conceitos e Organização Espacial</h2><div class="video-container"><iframe src="https://www.youtube.com/embed/5s_E2hrcarA" allowfullscreen></iframe></div></div>
+        <div id="aula3" class="content-pane"><h2 class="page-title">Aula 03 - Controle e Inventário de Materiais</h2><div class="video-container">
